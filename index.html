@@ -36,7 +36,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 50px auto;
       padding: 0 20px;
     }
@@ -51,8 +51,24 @@
       margin-top: 0;
     }
 
+    .two-column-layout {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .left-column {
+      flex: 2;
+      min-width: 0;
+    }
+
+    .right-column {
+      flex: 1;
+      min-width: 260px;
+    }
+
     .highlight {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       background-color: rgba(255, 255, 255, 0.06);
       padding: 25px;
       border-radius: 10px;
@@ -86,28 +102,6 @@
       color: #fff;
     }
 
-    .timeline {
-      border-left: 2px solid #62b3ff;
-      margin: 60px 0;
-      padding-left: 20px;
-    }
-
-    .timeline-entry {
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .timeline-entry::before {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      background: #62b3ff;
-      border-radius: 50%;
-    }
-
     footer {
       text-align: center;
       padding: 25px;
@@ -127,6 +121,12 @@
     a:hover {
       border-bottom: 1px solid #62b3ff;
     }
+
+    @media (max-width: 800px) {
+      .two-column-layout {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -137,39 +137,78 @@
   </header>
 
   <main>
-    <section class="skills-grid">
-      <span>SEO</span>
-      <span>Content Strategy</span>
-      <span>Video Scripting</span>
-      <span>Team Leadership</span>
-      <span>PPC Advertising</span>
-      <span>Project Management</span>
-      <span>Technical Writing</span>
-      <span>Public Speaking</span>
-    </section>
+    <div class="two-column-layout">
+      <div class="left-column">
+        <section class="skills-grid">
+          <span>SEO</span>
+          <span>Content Strategy</span>
+          <span>Video Scripting</span>
+          <span>Team Leadership</span>
+          <span>PPC Advertising</span>
+          <span>Project Management</span>
+          <span>Technical Writing</span>
+          <span>Public Speaking</span>
+        </section>
 
-    <section class="highlight">
-      <h2>Trademarkia: Driving Organic Growth</h2>
-      <p>I led an evergreen content initiative that generated thousands of new organic users for Trademarkia. This included managing a team of content writers, overseeing topic research, assigning content, and ensuring SEO best practices. As the project lead, I was directly responsible for growth outcomes and editorial strategy. You can see the published work on the <a href="https://www.trademarkia.com/knowledge-hub" target="_blank">Trademarkia Knowledge Hub</a>.</p>
-    </section>
+        <section class="highlight">
+          <h2>Trademarkia: Driving Organic Growth</h2>
+          <p>I led an evergreen content initiative that generated thousands of new organic users for Trademarkia. This included managing a team of content writers, overseeing topic research, assigning content, and ensuring SEO best practices. As the project lead, I was directly responsible for growth outcomes and editorial strategy. You can see the published work on the <a href="https://www.trademarkia.com/knowledge-hub" target="_blank">Trademarkia Knowledge Hub</a>.</p>
+        </section>
 
-    <section class="highlight">
-      <h2>PSN Travel: Tourism Trivia Campaign</h2>
-      <p>I spearheaded a local lead generation initiative at PSN Travel by creating and managing a Tourism Trivia Competition. I not only developed the strategy but also served as the public presenter for the campaign at a major shopping centre. The competition attracted dozens of participants and helped increase visibility and lead generation for the company.</p>
-      <img src="tourism-trivia.jpg" alt="Joshua presenting the tourism trivia contest at PSN Travel">
-    </section>
+        <section class="highlight">
+          <h2>PSN Travel: Tourism Trivia Campaign</h2>
+          <p>I spearheaded a local lead generation initiative at PSN Travel by creating and managing a Tourism Trivia Competition. I not only developed the strategy but also served as the public presenter for the campaign at a major shopping centre. The competition attracted dozens of participants and helped increase visibility and lead generation for the company.</p>
+          <img src="tourism-trivia.jpg" alt="Joshua presenting the tourism trivia contest at PSN Travel">
+        </section>
 
-    <section class="highlight">
-      <h2>FairyDigital: Multi-Niche Link Building</h2>
-      <p>At FairyDigital, I developed authoritative backlinks for clients spanning diverse industries by leveraging PR platforms. I tailored my approach to align with various brand voices and marketing strategies, managing tasks from outreach to content optimization. This versatile skill set enabled me to significantly enhance clients’ SEO performance in competitive markets.</p>
-    </section>
+        <section class="highlight">
+          <h2>FairyDigital: Multi-Niche Link Building</h2>
+          <p>At FairyDigital, I developed authoritative backlinks for clients spanning diverse industries by leveraging PR platforms. I tailored my approach to align with various brand voices and marketing strategies, managing tasks from outreach to content optimization. This versatile skill set enabled me to significantly enhance clients’ SEO performance in competitive markets.</p>
+        </section>
 
-    <section class="highlight">
-  <h2>Content Writing & On-Page SEO Experience</h2>
-  <p>I wrote hundreds of articles for My Content Pal, FairyDigital, Grassroots Content, and Captain Words. This extensive writing experience helped me develop strong skills in on-page SEO and content creation, improving organic traffic and engagement across multiple client sites.</p>
-</section>
+        <section class="highlight">
+          <h2>Content Writing & On-Page SEO Experience</h2>
+          <p>I wrote hundreds of articles for My Content Pal, FairyDigital, Grassroots Content, and Captain Words. This extensive writing experience helped me develop strong skills in on-page SEO and content creation, improving organic traffic and engagement across multiple client sites.</p>
+        </section>
+      </div>
 
+      <aside class="right-column">
+        <section class="highlight">
+          <h2>Featured Content</h2>
+          <h3 style="color: #62b3ff; margin-top: 30px;">Articles</h3>
+          <ul>
+            <li>
+              <a href="https://techbullion.com/a-comprehensive-guide-what-law-firm-owners-should-know-about-ai-tools/" target="_blank">
+                What Law Firm Owners Should Know About AI Tools (TechBullion)
+              </a><br />
+              <small>In-depth article on how legal professionals can leverage AI tools.</small>
+            </li>
+            <li>
+              <a href="https://legaldesire.com/patents-a-tool-for-inventors-driving-your-chances-of-venture-capital-investments/" target="_blank">
+                Patents & Venture Capital (Legal Desire)
+              </a><br />
+              <small>Explores how IP protection increases investor confidence.</small>
+            </li>
+          </ul>
 
+          <h3 style="color: #62b3ff; margin-top: 30px;">Video Shorts</h3>
+          <ul>
+            <li>
+              <a href="https://www.youtube.com/shorts/ZO52yYfZfr0" target="_blank">
+                How to conduct a trademark search?
+              </a><br />
+              <small>A concise explainer for business owners and entrepreneurs.</small>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/shorts/tH3Gc2JV7j4" target="_blank">
+                Should you copyright your creative work?
+              </a><br />
+              <small>Answers a common legal question in under 60 seconds.</small>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
   </main>
 
   <footer>
@@ -177,4 +216,3 @@
   </footer>
 </body>
 </html>
-
