@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // 8. Professional greeting replaced with YouTube video mini popup
+  // 8. Professional greeting replaced with slightly bigger YouTube popup
   const videoSpriteOverlay = document.createElement('div');
   videoSpriteOverlay.style.position = 'fixed';
   videoSpriteOverlay.style.top = '0';
@@ -20,22 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
   videoSpriteOverlay.style.display = 'flex';
   videoSpriteOverlay.style.alignItems = 'flex-start';
   videoSpriteOverlay.style.justifyContent = 'center';
-  videoSpriteOverlay.style.paddingTop = '30px'; // same distance as original sprite
+  videoSpriteOverlay.style.paddingTop = '30px';
   videoSpriteOverlay.style.zIndex = '1002';
 
   const videoSprite = document.createElement('div');
   videoSprite.style.background = '#fff';
-  videoSprite.style.padding = '12px';
-  videoSprite.style.borderRadius = '12px';
-  videoSprite.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
+  videoSprite.style.padding = '16px'; // slightly bigger padding
+  videoSprite.style.borderRadius = '14px';
+  videoSprite.style.boxShadow = '0 2px 16px rgba(0,0,0,0.22)'; // slightly stronger shadow
   videoSprite.style.display = 'flex';
   videoSprite.style.flexDirection = 'column';
   videoSprite.style.alignItems = 'center';
   videoSprite.style.fontFamily = 'inherit';
 
   const iframe = document.createElement('iframe');
-  iframe.width = '300';
-  iframe.height = '170';
+  iframe.width = '400'; // bigger width
+  iframe.height = '225'; // proportionally larger height
   iframe.src = 'https://www.youtube.com/embed/6YLSZbfS7ys?autoplay=1&rel=0';
   iframe.title = 'Welcome Video';
   iframe.frameBorder = '0';
