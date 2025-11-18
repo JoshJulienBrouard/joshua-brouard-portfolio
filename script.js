@@ -8,26 +8,52 @@ document.addEventListener('DOMContentLoaded', function() {
       clickSound.play();
     }
   });
-  // 8. Professional greeting sprite
-  const greetSprite = document.createElement('div');
-  greetSprite.innerHTML = '<span style="font-size:2.5rem;">🧑‍💼</span><div style="font-size:1.1rem; margin-top:8px;">Welcome to my portfolio!</div>';
-  greetSprite.style.position = 'fixed';
-  greetSprite.style.top = '30px';
-  greetSprite.style.left = '50%';
-  greetSprite.style.transform = 'translateX(-50%)';
-  greetSprite.style.background = '#fff';
-  greetSprite.style.color = '#050A30';
-  greetSprite.style.padding = '18px 32px';
-  greetSprite.style.borderRadius = '12px';
-  greetSprite.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
-  greetSprite.style.zIndex = '1002';
-  greetSprite.style.display = 'flex';
-  greetSprite.style.flexDirection = 'column';
-  greetSprite.style.alignItems = 'center';
-  greetSprite.style.fontFamily = 'inherit';
-  document.body.appendChild(greetSprite);
-  setTimeout(() => greetSprite.remove(), 3000);
-  // 1. Smooth scroll for anchor links
+
+  // 8. Professional greeting replaced with YouTube video mini popup
+  const videoSpriteOverlay = document.createElement('div');
+  videoSpriteOverlay.style.position = 'fixed';
+  videoSpriteOverlay.style.top = '0';
+  videoSpriteOverlay.style.left = '0';
+  videoSpriteOverlay.style.width = '100%';
+  videoSpriteOverlay.style.height = '100%';
+  videoSpriteOverlay.style.background = 'rgba(0,0,0,0.5)'; // dim background
+  videoSpriteOverlay.style.display = 'flex';
+  videoSpriteOverlay.style.alignItems = 'flex-start';
+  videoSpriteOverlay.style.justifyContent = 'center';
+  videoSpriteOverlay.style.paddingTop = '30px'; // same distance as original sprite
+  videoSpriteOverlay.style.zIndex = '1002';
+
+  const videoSprite = document.createElement('div');
+  videoSprite.style.background = '#fff';
+  videoSprite.style.padding = '12px';
+  videoSprite.style.borderRadius = '12px';
+  videoSprite.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
+  videoSprite.style.display = 'flex';
+  videoSprite.style.flexDirection = 'column';
+  videoSprite.style.alignItems = 'center';
+  videoSprite.style.fontFamily = 'inherit';
+
+  const iframe = document.createElement('iframe');
+  iframe.width = '300';
+  iframe.height = '170';
+  iframe.src = 'https://www.youtube.com/embed/6YLSZbfS7ys?autoplay=1&rel=0';
+  iframe.title = 'Welcome Video';
+  iframe.frameBorder = '0';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+
+  videoSprite.appendChild(iframe);
+  videoSpriteOverlay.appendChild(videoSprite);
+  document.body.appendChild(videoSpriteOverlay);
+
+  // Click outside video to remove popup
+  videoSpriteOverlay.addEventListener('click', (e) => {
+    if (e.target === videoSpriteOverlay) {
+      videoSpriteOverlay.remove();
+    }
+  });
+
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -36,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-
   // 2. Back to Top button
   const backToTop = document.createElement('button');
   backToTop.textContent = '↑ Top';
