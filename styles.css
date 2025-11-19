@@ -116,8 +116,7 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-  header img {
+  header img[src="joshua-headshot.jpeg"] {
     display: none;
   }
-}
 }
