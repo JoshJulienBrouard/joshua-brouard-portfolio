@@ -117,10 +117,7 @@ a:hover {
 
 @media (max-width: 600px) {
   header img {
-    position: static;
-    display: block;
-    margin: 20px auto 0;
-    width: 80px;
-    height: 80px;
+    display: none;
   }
+}
 }
