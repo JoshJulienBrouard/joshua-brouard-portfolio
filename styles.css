@@ -117,15 +117,18 @@ a:hover {
 
 @media (max-width: 600px) {
   header img {
-    top: auto;
-    bottom: 20px;
-    right: 10px;
-    width: 70px;
-    height: 70px;
+    position: static;        /* no absolute positioning */
+    display: block;
+    margin: 20px auto 0;     /* center it */
+    width: 80px;             /* smaller for mobile */
+    height: 80px;
   }
 
   header {
-    padding-bottom: 120px; /* give space for the image */
+    padding-top: 20px;       /* tighten padding */
+    text-align: center;
   }
+}
+
 }
 
