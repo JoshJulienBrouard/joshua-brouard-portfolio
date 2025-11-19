@@ -115,10 +115,17 @@ a:hover {
   border-bottom: 1px solid #62b3ff;
 }
 
-@media (max-width: 800px) {
-  .two-column-layout {
-    flex-direction: column;
+@media (max-width: 600px) {
+  header img {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  header {
+    padding-bottom: 120px; /* give space for the image */
   }
 }
-
 
